@@ -8,6 +8,9 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     minimumCacheTTL: 604800,
   },
+  turbopack: {
+    root: '.',
+  },
 };
 
 export default nextConfig;
