@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function About() {
   return (
     <section id="about" style={{ padding: '120px 24px', background: 'var(--bg-surface)' }}>
@@ -15,12 +17,15 @@ export default function About() {
             border: '1px solid rgba(201,243,29,0.2)',
             zIndex: 0,
           }} />
-          <div style={{ position: 'relative', zIndex: 1, overflow: 'hidden' }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=560&h=680&q=80"
+
+          {/* Image container — explicit height so next/image fill works */}
+          <div style={{ position: 'relative', zIndex: 1, overflow: 'hidden', height: 600 }}>
+            <Image
+              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=560&q=80"
               alt="Steppa — Personal Trainer"
-              style={{ width: '100%', height: '100%', display: 'block', objectFit: 'cover', objectPosition: 'center top' }}
+              fill
+              sizes="(max-width: 900px) 100vw, 50vw"
+              style={{ objectFit: 'cover', objectPosition: 'center top' }}
             />
             {/* Dark gradient overlay at bottom */}
             <div style={{
@@ -30,13 +35,15 @@ export default function About() {
               right: 0,
               height: '50%',
               background: 'linear-gradient(to top, rgba(12,12,12,0.85), transparent)',
+              zIndex: 1,
             }} />
-            {/* Lime color treatment */}
+            {/* Lime colour treatment */}
             <div style={{
               position: 'absolute',
               inset: 0,
               background: 'rgba(201,243,29,0.04)',
               mixBlendMode: 'color',
+              zIndex: 2,
             }} />
           </div>
 
@@ -47,7 +54,7 @@ export default function About() {
             right: -24,
             background: 'var(--lime)',
             padding: '20px 24px',
-            zIndex: 2,
+            zIndex: 3,
           }}>
             <div style={{ fontFamily: 'var(--font-bebas)', fontSize: '2.5rem', color: '#0C0C0C', lineHeight: 1 }}>5+</div>
             <div style={{ fontSize: '0.7rem', fontWeight: 700, color: 'rgba(0,0,0,0.6)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Years<br/>Training</div>
@@ -99,11 +106,7 @@ export default function About() {
           </div>
 
           {/* Quote */}
-          <blockquote style={{
-            borderLeft: '2px solid var(--lime)',
-            paddingLeft: 20,
-            margin: 0,
-          }}>
+          <blockquote style={{ borderLeft: '2px solid var(--lime)', paddingLeft: 20, margin: 0 }}>
             <p style={{
               fontFamily: 'var(--font-bebas)',
               fontSize: '1.3rem',
