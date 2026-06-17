@@ -27,7 +27,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section style={{ padding: '120px 24px', background: 'var(--bg-base)', position: 'relative', overflow: 'hidden' }}>
+    <section id="process" style={{ padding: '120px 24px', background: 'var(--bg-base)', position: 'relative', overflow: 'hidden' }}>
       {/* Large watermark */}
       <div style={{
         position: 'absolute',
@@ -69,7 +69,7 @@ export default function Process() {
         </div>
 
         {/* Steps */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 2 }}>
+        <div id="process-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 2 }}>
           {steps.map((step, i) => (
             <div
               key={step.number}
@@ -136,11 +136,15 @@ export default function Process() {
       </div>
 
       <style>{`
+        @media (max-width: 768px) {
+          #process { padding: 72px 20px !important; }
+          #process > div:last-child > div:first-child { flex-direction: column !important; align-items: flex-start !important; }
+        }
         @media (max-width: 900px) {
-          section > div > div:last-child { grid-template-columns: repeat(2, 1fr) !important; }
+          #process-grid { grid-template-columns: repeat(2, 1fr) !important; }
         }
         @media (max-width: 560px) {
-          section > div > div:last-child { grid-template-columns: 1fr !important; }
+          #process-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

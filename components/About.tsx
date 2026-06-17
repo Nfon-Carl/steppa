@@ -48,7 +48,7 @@ export default function About() {
           </div>
 
           {/* Experience badge */}
-          <div style={{
+          <div id="about-badge" style={{
             position: 'absolute',
             bottom: -24,
             right: -24,
@@ -123,6 +123,7 @@ export default function About() {
 
       <style>{`
         @media (max-width: 900px) {
+          #about { padding: 72px 20px !important; }
           #about > div { grid-template-columns: 1fr !important; gap: 60px !important; }
         }
       `}</style>

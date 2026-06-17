@@ -32,7 +32,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section style={{ padding: '120px 24px', background: 'var(--bg-base)' }}>
+    <section id="faq" style={{ padding: '120px 24px', background: 'var(--bg-base)' }}>
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         {/* Header */}
         <div style={{ marginBottom: 64 }}>
@@ -107,7 +107,7 @@ export default function FAQ() {
                 </button>
 
                 <div style={{
-                  maxHeight: isOpen ? '300px' : '0',
+                  maxHeight: isOpen ? '600px' : '0',
                   overflow: 'hidden',
                   transition: 'max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
                 }}>
@@ -124,6 +124,13 @@ export default function FAQ() {
           })}
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          #faq { padding: 72px 20px !important; }
+          #faq button { padding: 20px 20px !important; }
+          #faq p { padding: 0 20px 20px !important; }
+        }
+      `}</style>
     </section>
   );
 }

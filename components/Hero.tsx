@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import heroImg from '../assets/steppa-hero.webp';
 
 export default function Hero() {
   return (
@@ -15,12 +16,12 @@ export default function Hero() {
     >
       {/* Full-bleed background photo — priority loads above the fold */}
       <Image
-        src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1920&q=80"
+        src={heroImg}
         alt=""
         fill
         priority
         sizes="100vw"
-        style={{ objectFit: 'cover', objectPosition: 'center 30%', zIndex: 0 }}
+        style={{ objectFit: 'cover', objectPosition: 'center top', zIndex: 0 }}
       />
 
       {/* Dark + lime gradient overlay on top of photo */}
@@ -47,15 +48,15 @@ export default function Hero() {
         }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=900&q=75"
+          src={heroImg}
           alt=""
           fill
           priority
           sizes="42vw"
           style={{
             objectFit: 'cover',
-            objectPosition: 'center 30%',
-            filter: 'brightness(0.55) saturate(0.8)',
+            objectPosition: 'center top',
+            filter: 'brightness(0.6) saturate(0.85)',
           }}
         />
         {/* Lime colour-tint */}

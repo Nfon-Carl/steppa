@@ -58,7 +58,7 @@ export default function Footer() {
 
       {/* Main footer */}
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '64px 24px 40px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 48, marginBottom: 48 }}>
+        <div id="footer-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', gap: 48, marginBottom: 48 }}>
 
           {/* Brand */}
           <div>
@@ -182,6 +182,8 @@ export default function Footer() {
 
       <style>{`
         @media (max-width: 768px) {
+          footer > div:first-child { padding: 48px 20px !important; }
+          footer > div:last-child { padding: 48px 20px 32px !important; }
           footer > div:last-child > div:first-child { grid-template-columns: 1fr !important; gap: 36px !important; }
         }
       `}</style>

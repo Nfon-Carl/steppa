@@ -173,6 +173,9 @@ export default function Programs() {
       </div>
 
       <style>{`
+        @media (max-width: 768px) {
+          #programs { padding: 72px 20px !important; }
+        }
         @media (max-width: 900px) {
           #programs > div > div:last-child { grid-template-columns: 1fr !important; }
         }

@@ -14,7 +14,8 @@ export default function StatsBar() {
         padding: '0 24px',
         display: 'grid',
         gridTemplateColumns: 'repeat(4, 1fr)',
-      }}>
+      }}
+      id="statsbar-grid">
         {stats.map((s, i) => (
           <div
             key={s.label}
@@ -44,8 +45,8 @@ export default function StatsBar() {
       </div>
       <style>{`
         @media (max-width: 640px) {
-          section > div { grid-template-columns: repeat(2, 1fr) !important; }
-          section > div > div { border-right: none !important; border-bottom: 1px solid rgba(0,0,0,0.1); }
+          #statsbar-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          #statsbar-grid > div { border-right: none !important; border-bottom: 1px solid rgba(0,0,0,0.1); }
         }
       `}</style>
     </section>

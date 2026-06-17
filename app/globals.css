@@ -18,6 +18,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -123,7 +128,79 @@ body {
 .btn-ghost:active { transform: translateY(0); }
 .btn-ghost:focus-visible { outline: 2px solid var(--lime); outline-offset: 3px; }
 
-/* Animate on scroll utility */
+/* ─── Mobile responsive overrides ─────────────────────────────── */
+/* globals.css is the only reliable place to override React inline styles */
+
+@media (max-width: 900px) {
+  /* Process: 4-col → 2-col */
+  #process-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  /* About: 2-col → 1-col */
+  #about > div { grid-template-columns: 1fr !important; gap: 40px !important; }
+  /* Programs: 3-col → 1-col */
+  #programs > div > div:last-child { grid-template-columns: 1fr !important; }
+  /* Section padding reduction begins at 900 */
+  #about { padding: 72px 20px !important; }
+  #programs { padding: 72px 20px !important; }
+  /* About badge: pull it inside bounds on mobile */
+  #about-badge { right: 0 !important; bottom: 0 !important; }
+}
+
+@media (max-width: 768px) {
+  /* Section padding: 120px → 72px */
+  #process, #results, #testimonials, #pricing, #faq {
+    padding: 72px 20px !important;
+  }
+
+  /* Testimonials slider: 2-col → 1-col */
+  #testimonials-slider {
+    grid-template-columns: 1fr !important;
+    gap: 48px !important;
+  }
+  #testimonials-slider > div:first-child { height: 340px !important; }
+
+  /* Pricing: 3-col → 1-col (fixed: div:last-child was a <p>, not the grid) */
+  #pricing-grid { grid-template-columns: 1fr !important; }
+  /* Pricing header: side-by-side → stacked */
+  #pricing > div > div:first-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+  }
+
+  /* Results: 2-col → 1-col */
+  #results > div > div:last-child { grid-template-columns: 1fr !important; }
+  #results > div > div:last-child > div { padding: 28px 20px !important; }
+
+  /* Process header: side-by-side → stacked */
+  #process > div:last-child > div:first-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  /* FAQ: reduce button/answer padding */
+  #faq button { padding: 20px !important; }
+  #faq > div > div > div > div > p { padding: 0 20px 20px !important; }
+
+  /* Footer */
+  footer > div:first-child { padding: 48px 20px !important; }
+  #footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* StatsBar: 4-col → 2-col */
+  #statsbar-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  #statsbar-grid > div { border-right: none !important; border-bottom: 1px solid rgba(0,0,0,0.1); }
+}
+
+@media (max-width: 560px) {
+  /* Process: 2-col → 1-col */
+  #process-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ─── Animate on scroll utility ───────────────────────────────── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }

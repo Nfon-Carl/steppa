@@ -138,7 +138,9 @@ export default function Results() {
 
       <style>{`
         @media (max-width: 768px) {
+          #results { padding: 72px 20px !important; }
           #results > div > div:last-child { grid-template-columns: 1fr !important; }
+          #results > div > div:last-child > div { padding: 28px 20px !important; }
         }
       `}</style>
     </section>

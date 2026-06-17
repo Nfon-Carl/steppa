@@ -127,7 +127,7 @@ export default function Pricing() {
         </div>
 
         {/* Plans */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }}>
+        <div id="pricing-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 2 }}>
           {plans.map((plan) => (
             <div
               key={plan.name}
@@ -227,8 +227,12 @@ export default function Pricing() {
       </div>
 
       <style>{`
+        @media (max-width: 768px) {
+          #pricing { padding: 72px 20px !important; }
+          #pricing > div > div:first-child { flex-direction: column !important; align-items: flex-start !important; gap: 20px !important; }
+        }
         @media (max-width: 900px) {
-          #pricing > div > div:last-child { grid-template-columns: 1fr !important; }
+          #pricing-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>
