@@ -69,7 +69,7 @@ export default function Process() {
         </div>
 
         {/* Steps */}
-        <div id="process-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 2 }}>
+        <div id="process-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 2, marginBottom: 48 }}>
           {steps.map((step, i) => (
             <div
               key={step.number}
@@ -132,6 +132,19 @@ export default function Process() {
               </p>
             </div>
           ))}
+        </div>
+        {/* CTA */}
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 0 }}>
+          <a
+            href="/results"
+            className="btn-ghost"
+            style={{ textDecoration: 'none', padding: '14px 40px' }}
+          >
+            View Results
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </a>
         </div>
       </div>
 

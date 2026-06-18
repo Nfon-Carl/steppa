@@ -57,6 +57,12 @@ body {
   }
 }
 
+/* Hero — exact viewport fit with dvh fallback */
+.hero-section {
+  height: 100vh;
+  height: 100dvh;
+}
+
 /* Scroll bar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-base); }
@@ -143,6 +149,24 @@ body {
   #programs { padding: 72px 20px !important; }
   /* About badge: pull it inside bounds on mobile */
   #about-badge { right: 0 !important; bottom: 0 !important; }
+}
+
+@media (max-width: 768px) {
+  /* Hero: center all content, hide accent lines */
+  #hero-content-inner {
+    text-align: center !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+  #hero-tagline { justify-content: center !important; }
+  #hero-accent-line { display: none !important; }
+  #hero-subtitle {
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  #hero-buttons { justify-content: center !important; }
+  .hero-left-line { display: none !important; }
 }
 
 @media (max-width: 768px) {

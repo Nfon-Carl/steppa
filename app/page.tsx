@@ -4,7 +4,6 @@ import StatsBar from '@/components/StatsBar';
 import Programs from '@/components/Programs';
 import About from '@/components/About';
 import Process from '@/components/Process';
-import Results from '@/components/Results';
 import Testimonials from '@/components/Testimonials';
 import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
@@ -19,7 +18,6 @@ export default function Home() {
       <Programs />
       <About />
       <Process />
-      <Results />
       <Testimonials />
       <Pricing />
       <FAQ />

@@ -2,10 +2,11 @@
 import { useState, useEffect } from 'react';
 
 const links = [
+  { label: 'Home', href: '/' },
   { label: 'Programs', href: '#programs' },
   { label: 'About', href: '#about' },
-  { label: 'Results', href: '#results' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'Results', href: '/results' },
+  { label: 'Register', href: '#pricing' },
 ];
 
 export default function Navbar() {
@@ -72,7 +73,7 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden-mobile">
           <a href="#pricing" className="btn-lime" style={{ fontSize: '0.875rem', padding: '10px 24px' }}>
-            Start Today
+            Register Now
           </a>
         </div>
 
@@ -130,7 +131,7 @@ export default function Navbar() {
             </a>
           ))}
           <a href="#pricing" className="btn-lime" style={{ marginTop: 16, width: '100%', justifyContent: 'center' }}>
-            Start Today
+            Register Now
           </a>
         </div>
       )}

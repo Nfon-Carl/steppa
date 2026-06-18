@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import steppaHero from '../assets/steppa-hero.webp';
 
 export default function About() {
   return (
@@ -21,7 +22,7 @@ export default function About() {
           {/* Image container — explicit height so next/image fill works */}
           <div style={{ position: 'relative', zIndex: 1, overflow: 'hidden', height: 600 }}>
             <Image
-              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=560&q=80"
+              src={steppaHero}
               alt="Steppa — Personal Trainer"
               fill
               sizes="(max-width: 900px) 100vw, 50vw"

@@ -4,8 +4,8 @@ import heroImg from '../assets/steppa-hero.webp';
 export default function Hero() {
   return (
     <section
+      className="hero-section"
       style={{
-        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -66,7 +66,7 @@ export default function Hero() {
       </div>
 
       {/* Lime vertical accent line */}
-      <div style={{
+      <div className="hero-left-line" style={{
         position: 'absolute',
         left: 24,
         top: '50%',
@@ -78,31 +78,31 @@ export default function Hero() {
         zIndex: 3,
       }} />
 
-      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '80px 24px', position: 'relative', zIndex: 4, width: '100%' }}>
-        <div style={{ maxWidth: 680 }}>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: 'clamp(32px, 5vh, 72px) 24px', position: 'relative', zIndex: 4, width: '100%' }}>
+        <div id="hero-content-inner" style={{ maxWidth: 680 }}>
           {/* Tag line */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 32 }}>
-            <span style={{ width: 32, height: 2, background: 'var(--lime)', display: 'inline-block' }} />
+          <div id="hero-tagline" style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 32 }}>
+            <span id="hero-accent-line" style={{ width: 32, height: 2, background: 'var(--lime)', display: 'inline-block' }} />
             <span className="section-number" style={{ fontSize: '0.7rem' }}>Personal Training & Coaching</span>
           </div>
 
           {/* Main headline */}
-          <h1 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(4rem, 10vw, 9rem)', lineHeight: 0.9, letterSpacing: '-0.02em', color: 'var(--text-primary)', marginBottom: 8 }}>
+          <h1 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(3.2rem, 8vw, 9rem)', lineHeight: 0.9, letterSpacing: '-0.02em', color: 'var(--text-primary)', marginBottom: 6 }}>
             STEP INTO
           </h1>
-          <h1 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(4rem, 10vw, 9rem)', lineHeight: 0.9, letterSpacing: '-0.02em', color: 'var(--lime)', marginBottom: 8 }}>
+          <h1 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(3.2rem, 8vw, 9rem)', lineHeight: 0.9, letterSpacing: '-0.02em', color: 'var(--lime)', marginBottom: 6 }}>
             YOUR BEST
           </h1>
-          <h1 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(4rem, 10vw, 9rem)', lineHeight: 0.9, letterSpacing: '-0.02em', color: 'var(--text-primary)', marginBottom: 40 }}>
+          <h1 style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(3.2rem, 8vw, 9rem)', lineHeight: 0.9, letterSpacing: '-0.02em', color: 'var(--text-primary)', marginBottom: 'clamp(20px, 3vh, 40px)' }}>
             SHAPE.
           </h1>
 
-          <p style={{ fontSize: '1.1rem', lineHeight: 1.7, color: 'var(--text-muted)', maxWidth: 460, marginBottom: 48 }}>
+          <p id="hero-subtitle" style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--text-muted)', maxWidth: 460, marginBottom: 'clamp(24px, 4vh, 48px)' }}>
             Elite personal training built around you. Real programming, real accountability,
             and real results — whether you&apos;re starting out or breaking plateaus.
           </p>
 
-          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <div id="hero-buttons" style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
             <a href="#pricing" className="btn-lime">
               Start Coaching
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
